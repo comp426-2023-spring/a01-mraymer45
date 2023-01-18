@@ -12,8 +12,7 @@ var argv = require('minimist')(process.argv.slice(2)); // Copied from this "site
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
 const port = argv.port;
-if (port == null) { port = 3000; 
-}
+if (port == null) { port = 3000; }
 // Use the fs module to create an arrow function using `fs.readFile`.
 // Use the documentation for the Node.js `fs` module. 
 // The function must read a file located at `./public/index.html` and do some stuff with it.
@@ -35,10 +34,9 @@ if (error) {
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./public/index.html.
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {    // Used this site for help https://www.w3schools.com/nodejs/met_http_createserver.asp
 	//res.statusCode = 200;
 	res.writeHead(200, { 'Content-Type': 'text/html' });
-	//res.setHeader('Content-Type', 'text/html');
 	res.end(data);
 })
 
